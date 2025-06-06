@@ -1,0 +1,22 @@
+{% load static %} 
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Ecommerce App{% endblock %}</title>
+    {% tailwind_css %}
+  </head>
+  <body class="bg-gray-800 text-gray-100 flex flex-col min-h-screen">
+    <header class="shadow-md">{% include "includes/nav.html" %}</header>
+    <main class="container mx-auto p-8 flex-grow">
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <div class="container mx-auto p-4 text-center">
+        <p>@2024 E-Com Inc. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
