@@ -16,9 +16,9 @@
             <a href="{%url 'products:product_detail' item.product.id item.product.slug%}">
         <h3 class="font-semibold text-lg">{{item.product.name}}</h3>
             </a>
-        <p class="text-gray-700">{{item.product.description}}</p>
-        <p class="text-indigo-600">${{item.product.price}}</p>
-        <p class="text-gray-600">Quantity: {{item.quantity}}</p>
+        <p class="text-gray-100">{{item.product.description}}</p>
+        <p class="text-orange-600">${{item.product.price}}</p>
+        <p class="text-gray-50">Quantity: {{item.quantity}}</p>
 
 <div class="flex-shrink">
    <form action="{%url 'cart:remove_item' item.id %}"  method="post">
@@ -37,6 +37,6 @@
 {% endif %}
 <form action="{% url 'orders:order_create'%}" method="post">
     {%csrf_token%}
-    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded mt-0.5">Proceed to Checkout</button>
+    <button type="submit" class="bg-orange-600 text-white px-4 py-2 rounded mt-0.5">Proceed to Checkout</button>
 </form>
 {%endblock%}
